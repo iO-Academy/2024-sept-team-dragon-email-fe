@@ -1,7 +1,12 @@
+import EmailList from "./components/EmailList"
+
+
 function App() {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline text-red-500">Hello, Dragons</h1>
+    
+      <EmailList />
+      
     </div>
   )
 }
