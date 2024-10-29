@@ -1,15 +1,15 @@
-function EmailPreview() {
+function EmailPreview({emailName, emailSubject, emailBody, emailDate}) {
     return (
         // console.log('EmailPreview')
         <div className="emailSummaryBox flex justify-between px-4 py-2 border-t-2">
             <div>
-                <p className="emailName text-lg font-bold">Name</p>
-                <p className="emailSubject text-sm">Subject</p>
-                <p className="emailBody text-sm">First line</p>
+                <p className="text-lg font-bold">{emailName}</p>
+                <p className="text-sm">{emailSubject}</p>
+                <p className="text-sm">{emailBody}</p>
             </div>
             
             <div>
-                <p className="emailDate text-lg font-bold">Date</p>
+                <p className="text-lg font-bold">{emailDate}</p>
             </div>
             
         </div>
