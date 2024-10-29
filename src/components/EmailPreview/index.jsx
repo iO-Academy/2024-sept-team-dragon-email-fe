@@ -3,7 +3,6 @@ function EmailPreview({emailName, emailSubject, emailBody, emailDate, emailRead}
     function backgrCol () {
         console.log(emailRead)
         return emailRead==1 ? "bg-white" : "bg-gray-400"
-        
     }
 
     return (

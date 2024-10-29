@@ -5,7 +5,6 @@ function EmailList() {
 
     const [emails, setEmails] = useState([])
 
-
     function getEmailData () {
         fetch("https://email-client-api.dev.io-academy.uk/emails")
             .then(res => res.json())
