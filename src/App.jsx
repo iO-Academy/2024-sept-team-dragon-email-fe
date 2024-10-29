@@ -1,12 +1,11 @@
-import Dropdown from "./components/Dropdown"
+import EmailList from "./components/EmailList"
 import Nav from "./components/Nav"
 
 function App() {
   return (
     <div>
       <Nav />
-      <div className="dropDown">
-      </div>
+      <EmailList /> 
     </div>
   )
 }
