@@ -16,7 +16,7 @@ function EmailPreview({emailName, emailSubject, emailBody, emailDate, emailRead}
             </div>
             
             <div>
-                <p className="text-lg font-bold">{emailDate}</p>
+                <p className="font-bold">{emailDate}</p>
             </div>
             
         </div>
