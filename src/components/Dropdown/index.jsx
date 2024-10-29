@@ -6,7 +6,7 @@ import SentButton from "../SentButton"
 function Dropdown (){
     return (
         <div className="dropDownContent">
-            <box className="grid grid-row-4 font-bold text-xl float-left
+            <div className="grid grid-row-4 font-bold text-xl float-left
             text-white bg-gray-400 fixed">
                 <button className="border-b
                  hover:bg-slate-500 p-5"><NewEmailButton /></button>
@@ -16,7 +16,7 @@ function Dropdown (){
                  hover:bg-slate-500 p-5"><SentButton /></button>
                 <button className="border-b
                  hover:bg-slate-500 p-5"><DeletedButton /></button>
-            </box>
+            </div>
         </div>
     )
 }
