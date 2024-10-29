@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import EmailPreview from "../EmailPreview";
+import { useEffect, useState } from "react"
+import EmailPreview from "../EmailPreview"
 
 function EmailList() {
 
@@ -16,8 +16,8 @@ function EmailList() {
     useEffect(getEmailData, [])
 
     function reverseDate(inputDate) {
-        let array = inputDate.split("-");
-        let newDate = `${array[2]}-${array[1]}-${array[0]}`;
+        let array = inputDate.split("-")
+        let newDate = `${array[2]}-${array[1]}-${array[0]}`
         return newDate
     }
 
