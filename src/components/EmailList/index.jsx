@@ -26,6 +26,7 @@ function EmailList() {
                 {emails.map(email => 
                     <EmailPreview 
                         key={email.id}
+                        emailRead={email.read}
                         emailName={email.name}
                         emailSubject={email.subject}
                         emailBody={`${email.body.substring(0, 35)}...`}
