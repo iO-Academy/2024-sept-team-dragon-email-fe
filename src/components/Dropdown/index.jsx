@@ -8,7 +8,7 @@ function Dropdown (){
     return (
         <div className="dropDownContent">
             <div className="grid grid-row-4 font-bold text-xl float-left
-            text-white bg-gray-400 fixed">
+            text-white bg-gray-400 absolute">
                 <button className="border-b
                  hover:bg-slate-500 p-5"><NewEmailButton /></button>
                 <button className="border-b
