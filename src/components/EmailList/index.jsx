@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
-import EmailPreview from "../EmailPreview";
+import { useEffect, useState } from "react"
+import EmailPreview from "../EmailPreview"
 
 function EmailList() {
 
     const [emails, setEmails] = useState([])
-
 
     function getEmailData () {
         fetch("https://email-client-api.dev.io-academy.uk/emails")
@@ -17,8 +16,8 @@ function EmailList() {
     useEffect(getEmailData, [])
 
     function reverseDate(inputDate) {
-        let array = inputDate.split("-");
-        let newDate = `${array[2]}-${array[1]}-${array[0]}`;
+        let array = inputDate.split("-")
+        let newDate = `${array[2]}-${array[1]}-${array[0]}`
         return newDate
     }
 
@@ -27,6 +26,7 @@ function EmailList() {
                 {emails.map(email => 
                     <EmailPreview 
                         key={email.id}
+                        emailRead={email.read}
                         emailName={email.name}
                         emailSubject={email.subject}
                         emailBody={`${email.body.substring(0, 35)}...`}

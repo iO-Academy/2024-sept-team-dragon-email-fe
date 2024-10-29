@@ -12,7 +12,6 @@ function Nav() {
             <div>
                 <p>User Name</p>
             </div>
-            
         </header>
     )
 }
