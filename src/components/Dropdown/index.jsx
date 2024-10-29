@@ -4,6 +4,7 @@ import NewEmailButton from "../NewEmailButton"
 import SentButton from "../SentButton"
 
 function Dropdown (){
+
     return (
         <div className="dropDownContent">
             <div className="grid grid-row-4 font-bold text-xl float-left
