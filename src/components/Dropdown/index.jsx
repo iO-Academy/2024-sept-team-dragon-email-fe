@@ -4,8 +4,6 @@ import NewEmailButton from "../NewEmailButton"
 import SentButton from "../SentButton"
 
 function Dropdown (){
-    
-
 
     return (
         <div className="dropDownContent">
