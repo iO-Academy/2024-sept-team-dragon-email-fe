@@ -10,15 +10,10 @@ function getEmailData () {
         .then(res => res.json())
         .then(emailData => {
             setEmails (emailData.data)
-            console.log(emailData.data)
-//            console.log(emailData.data[0].name)
-//            console.log(emailData.data[].name)
-//            setEmailName(data[].name)
-//            setEmailSubject(data[].subject)
-//            setEmailBody(data[].body)
+            // console.log(emailData.data)
         })
-
 }
+
 
     
 useEffect(getEmailData, [])
@@ -26,14 +21,17 @@ useEffect(getEmailData, [])
     return (
         <>
         <div className="border-b-2">
-        {emails.map(email => <EmailPreview  emailName= {email.name}
+        {emails.map(email => <EmailPreview  key={email.id}
+                                            emailName={email.name}
                                             emailSubject={email.subject}
-                                            emailBody={email.body}
-                                            emailDate={email.date_created}/>)}
+                                            emailBody={`${email.body.slice(0, 35)}...`}
+                                            emailDate={email.date_created.split(" ")[0]}/>)}
 
         </div>
+ 
         </>
     )
 
 }
+
 export default EmailList;
