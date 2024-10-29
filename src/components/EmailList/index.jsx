@@ -19,7 +19,7 @@ useEffect(getEmailData, [])
     return (
         <>
         <div className="border-b-2">
-        {emails.map(email => <EmailPreview  key={email.id}
+        {emails.map(email => <EmailPreview key={email.id}
                                             emailRead={email.read}
                                             emailName={email.name}
                                             emailSubject={email.subject}
