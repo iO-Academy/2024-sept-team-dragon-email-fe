@@ -1,37 +1,31 @@
 function EmailForm(){
     return(
-        <div class="form-group">
-        <form>
-            <label for="email"></label>
+        <form className="flex flex-col py-4 px-8 gap-4">
+            <label for="email" />
             <input
             type="email"
             id="email"
             placeholder="To"
+            className="border-2 rounded border-gray-200 p-2"
             />
 
-<label for="Subject"></label>
+            <label for="subject" />
             <input
             type="text"
-            id="Subject"
+            id="subject"
             placeholder="Subject"
+            className="border-2 rounded border-gray-200 p-2"
             />
 
-            <textarea id="Message"
-            name="Message"
+            <label for="message" />
+            <textarea id="message"
+            name="message"
             rows="20"
             cols="30"
             placeholder="Type your message here"
-            />
-
-            
-
-
-
-
-        
-        </form>
-    
-    </div>
+            className="border-2 rounded border-gray-200 p-2"
+            />  
+        </form> 
     )
 }
 
