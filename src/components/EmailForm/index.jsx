@@ -1,7 +1,7 @@
 function EmailForm(){
     return(
         <form className="flex flex-col py-4 px-8 gap-4">
-            <label for="email" />
+            <label htmlFor="email" />
             <input
             type="email"
             id="email"
@@ -9,7 +9,7 @@ function EmailForm(){
             className="border-2 rounded border-gray-200 p-2"
             />
 
-            <label for="subject" />
+            <label htmlFor="subject" />
             <input
             type="text"
             id="subject"
@@ -17,7 +17,7 @@ function EmailForm(){
             className="border-2 rounded border-gray-200 p-2"
             />
 
-            <label for="message" />
+            <label htmlFor="message" />
             <textarea id="message"
             name="message"
             rows="20"
