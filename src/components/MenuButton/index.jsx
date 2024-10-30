@@ -1,7 +1,6 @@
 import { useState } from "react"
 import Dropdown from "../Dropdown"
 
-
 function MenuButton (){
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
@@ -13,8 +12,7 @@ function MenuButton (){
     <nav>
       <button 
         onClick={toggleMenu}
-        className="border-4 p-1 rounded-md border-white font-normal hover:bg-slate-400 snap-normal scroll-mx-px"
-      >
+        className="border-4 p-1 rounded-md border-white font-normal hover:bg-slate-400 snap-normal scroll-mx-px">
         MENU
       </button>
       {isMenuOpen && (
@@ -23,8 +21,7 @@ function MenuButton (){
         </div>
       )}
     </nav>
-  );
+  )
 }
-
 
  export default MenuButton

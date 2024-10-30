@@ -1,7 +1,10 @@
+import EmailForm from "../../components/EmailForm"
+
 function ComposePage(){
+
     return(
         <div>
-            <p>Hello World</p>
+            <EmailForm/>
         </div>
     )
 }
