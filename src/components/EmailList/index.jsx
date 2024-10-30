@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import EmailPreview from "../EmailPreview"
+import { Link } from "react-router-dom"
 
 function EmailList() {
 
@@ -23,7 +24,7 @@ function EmailList() {
 
         return (
             <div className="border-b-2">
-                {emails.map(email => 
+                {emails.map(email =>
                     <EmailPreview 
                         key={email.id}
                         emailRead={email.read}
@@ -33,6 +34,7 @@ function EmailList() {
                         emailDate={reverseDate(email.date_created.split(" ")[0])}
                     />
                 )}
+              
             </div>
         )
     }
