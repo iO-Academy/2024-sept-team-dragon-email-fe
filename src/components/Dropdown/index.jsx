@@ -4,7 +4,7 @@ import DropdownButton from "../DropdownButton"
 function Dropdown() {  
     const [unreadEmailCount, setUnreadEmailCount] = useState(0)
 
-    function getEmailCount () {
+    function getEmailCount() {
         fetch("https://email-client-api.dev.io-academy.uk/emails")
             .then(res => res.json())
             .then(emailData => {
