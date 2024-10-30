@@ -22,10 +22,11 @@ function EmailList() {
         return newDate
     }
 
-        return (
-            <div className="border-b-2">
+    return (
+            <div className="border-b-2" >
                 {emails.map(email =>
                     <EmailPreview 
+                        emailID={email.id}
                         key={email.id}
                         emailRead={email.read}
                         emailName={email.name}
@@ -34,7 +35,6 @@ function EmailList() {
                         emailDate={reverseDate(email.date_created.split(" ")[0])}
                     />
                 )}
-              
             </div>
         )
     }

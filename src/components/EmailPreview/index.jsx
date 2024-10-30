@@ -1,4 +1,6 @@
-function EmailPreview({emailName, emailSubject, emailBody, emailDate, emailRead}) {
+import { Link } from "react-router-dom"
+
+function EmailPreview({emailName, emailSubject, emailBody, emailDate, emailRead, emailID}) {
 
     function backgrCol () {
         console.log(emailRead)
@@ -6,7 +8,9 @@ function EmailPreview({emailName, emailSubject, emailBody, emailDate, emailRead}
     }
 
     return (
-        <div className={backgrCol()+" emailSummaryBox flex justify-between px-4 py-2 border-t-2"}>
+        <Link to={`/viewemail/${emailID}`}>
+        <div className={backgrCol() + " emailSummaryBox flex justify-between px-4 py-2 border-t-2"} >
+
             <div>
                 <p className="text-lg font-bold">{emailName}</p>
                 <p className="text-sm">{emailSubject}</p>
@@ -17,7 +21,8 @@ function EmailPreview({emailName, emailSubject, emailBody, emailDate, emailRead}
                 <p className="font-bold">{emailDate}</p>
             </div>
             
-        </div>
+            </div>
+        </Link>
     )
 }
 
