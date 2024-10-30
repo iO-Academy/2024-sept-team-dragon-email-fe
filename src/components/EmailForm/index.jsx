@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 function EmailForm(){
     const [email,setEmail]=useState('')
@@ -9,8 +10,8 @@ function EmailForm(){
         console.log(email)
         console.log(subject)
         console.log(message)
-        
     }
+
     return(
         <form onSubmit={handleSubmit}
         className="flex flex-col py-4 px-8 gap-4">
@@ -43,10 +44,18 @@ function EmailForm(){
             onChange={(e)=> setMessage(e.target.value)}
             placeholder="Type your message here"
             className="border-2 rounded border-gray-200 p-2"
-            /> 
-            <input 
-            type="submit"
             />
+
+            <div className="flex gap-1 self-end">
+                    <Link to="/">
+                    <button className="border rounded
+                    py-2 px-3 text-white bg-gray-500">Cancel</button>
+                    </Link>
+
+                    <input type="submit" value="Send" className="border rounded
+                    py-2 px-3 text-white bg-green-600 cursor-pointer"/>
+
+            </div>
         </form> 
     )
 }
