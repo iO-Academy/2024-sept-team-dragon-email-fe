@@ -24,16 +24,26 @@ function ViewEmail() {
 
     useEffect(getEmailData, [])
     
+    function reverseDate(inputDate) {
+        let splitDate = inputDate.split(" ")[0]
+        let array = splitDate.split("-")
+        let newDate = `${array[2]}-${array[1]}-${array[0]}`
+        return newDate
+    }
+
     return (
         <div>
-            <p>{date}</p>
-            <div className="pl-4 pt-4 flex-col justify-between px-4 py-2 ">
-                <h2 className="mb-4">{name}</h2>
-                <p className="mb-4">{emailAddress}</p>
-                <p className="mb-4">{subject}</p>
+            <p className="flex justify-end mx-4 border-b-2 border-dotted py-2
+            text-sm font-bold text-slate-600">{reverseDate (date)}</p>
+            <div className="flex-col justify-between px-4 text-slate-600">
+                <h2 className="pt-2 font-bold text-lg">{name}</h2>
+                <p className="italic border-b-2 border-dotted
+                 text-lg pb-2">{emailAddress}</p>
+                <p className="mb-4 pt-2 border-b-2 border-dotted pb-2 font-extrabold
+                text-2xl">{subject}</p>
             </div>
-            <div>
-                <p>{body}</p>
+            <div> 
+                <p className="px-4 text-slate-600">{body}</p> 
             </div>
         </div>
  )
