@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import EmailList from "./components/EmailList"
+import EmailList from "./pages/EmailList"
 import Nav from "./components/Nav"
-import ViewEmail from "./pages/ViewEmail"
 
 function App() {
   return (
@@ -11,9 +10,7 @@ function App() {
           
       </div>
       <Routes>
-        <Route path="/" element={<EmailList /> } /> 
-        <Route path="/viewemail" element={ <ViewEmail />} />
-      
+        <Route path="/" element={<EmailList /> } />
       </Routes>
     </BrowserRouter>
   )

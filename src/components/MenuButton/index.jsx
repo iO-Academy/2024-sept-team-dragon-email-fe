@@ -5,7 +5,7 @@ function MenuButton (){
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   function toggleMenu() {
-    setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen)
+    setIsMenuOpen(!isMenuOpen)
   }
 
   return (
@@ -16,9 +16,8 @@ function MenuButton (){
         MENU
       </button>
       {isMenuOpen && (
-        <div>
+
           <Dropdown />
-        </div>
       )}
     </nav>
   )
