@@ -34,13 +34,9 @@ function EmailList() {
                         emailBody={`${email.body.substring(0, 35)}...`}
                         emailDate={reverseDate(email.date_created.split(" ")[0])}
                     />
-
-                   
                 )}
-                
             </div>
         )
-    
     }
 
 export default EmailList
