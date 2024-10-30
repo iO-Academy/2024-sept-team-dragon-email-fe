@@ -15,7 +15,7 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<EmailList /> } /> 
-        <Route path="/viewemail" element={<ViewEmail />} />
+        <Route path="/viewemail/:id" element={<ViewEmail />} />
         <Route path="/compose"element={<ComposePage/>}/>
       
       
