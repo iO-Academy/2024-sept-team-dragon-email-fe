@@ -14,7 +14,6 @@ function ViewEmail() {
         fetch(`https://email-client-api.dev.io-academy.uk/emails/${id}`)
             .then(res => res.json())
             .then(emailData => {
-                // console.log(emailData.data.email.name)
                 setName(emailData.data.email.name)
                 setEmailAddress(emailData.data.email.email)
                 setSubject(emailData.data.email.subject)
@@ -27,11 +26,15 @@ function ViewEmail() {
     
     return (
         <div>
-            <h2>{name}</h2>
-            <p>{emailAddress}</p>
-            <p>{subject}</p>
             <p>{date}</p>
-            <p>{body}</p>
+            <div className="pl-4 pt-4 flex-col justify-between px-4 py-2 ">
+                <h2 className="mb-4">{name}</h2>
+                <p className="mb-4">{emailAddress}</p>
+                <p className="mb-4">{subject}</p>
+            </div>
+            <div>
+                <p>{body}</p>
+            </div>
         </div>
  )
 }
