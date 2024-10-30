@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import EmailList from "./components/EmailList"
+import EmailList from "./pages/EmailList"
 import Nav from "./components/Nav"
 import ViewEmail from "./pages/ViewEmail"
 import ComposePage from "./pages/ComposePage"
