@@ -42,7 +42,6 @@ function ViewEmail() {
             console.log(data)
                 })
             console.log(isDeleted)
-
     }
 
     useEffect(getEmailData, [])
