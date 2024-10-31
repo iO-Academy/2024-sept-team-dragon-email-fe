@@ -12,28 +12,27 @@ function EmailForm(){
         console.log(message)
         getData()
     }
-
   function getData (){
     fetch('https://email-client-api.dev.io-academy.uk/emails', {
-      method: 'POST',
-      headers: {
-        "content-type": "application/json"
-      },
-      body:JSON.stringify({
-        name: "username",
-        email:email,
-        subject:subject,
-        body:message
-    })
+  method: 'POST',
+  headers: {
+    "content-type": "application/json"
+  },
+  body:JSON.stringify({
+    name: "username",
+     email:email,
+      subject:subject,
+      body:message
+      })
 })
   .then(res => res.json())
   .then(data => {
     console.log(data)
   })
   }
-    return(
+ return(
         <form onSubmit={handleSubmit}
-        className="flex flex-col py-4 px-8 gap-4">
+            className="flex flex-col py-4 px-8 gap-4">
             <label htmlFor="email" />
             <input
             type="email"
@@ -43,7 +42,6 @@ function EmailForm(){
             placeholder="To"
             className="border-2 rounded border-gray-200 p-2"
             />
-
             <label htmlFor="subject" />
             <input
             type="text"
@@ -53,8 +51,7 @@ function EmailForm(){
             placeholder="Subject"
             className="border-2 rounded border-gray-200 p-2"
             />
-
-            <label htmlFor="message" />
+           <label htmlFor="message" />
             <textarea id="message"
             name="message"
             rows="20"
@@ -64,13 +61,11 @@ function EmailForm(){
             placeholder="Type your message here"
             className="border-2 rounded border-gray-200 p-2"
             />
-
-            <div className="flex gap-1 self-end">
+              <div className="flex gap-1 self-end">
                     <Link to="/">
                     <button className="border rounded
                     py-2 px-3 text-white bg-gray-500">Cancel</button>
                     </Link>
-
                     <input type="submit" value="Send" className="border rounded
                     py-2 px-3 text-white bg-green-600 cursor-pointer"/>
 
