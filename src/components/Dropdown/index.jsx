@@ -12,7 +12,9 @@ function Dropdown({unreadCount}) {
                                 count={unreadCount} 
                                 link="/"/> 
                 <DropdownButton name="Sent"  
-                                link="/sent"/>                         
+                                link="/sent"/>
+                <DropdownButton name="Deleted"  
+                                link="/deleted"/>                          
             </div>
         </div>
     )
