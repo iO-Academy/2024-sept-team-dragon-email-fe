@@ -3,6 +3,7 @@ import EmailList from "./pages/EmailList"
 import Nav from "./components/Nav"
 import ViewEmail from "./pages/ViewEmail"
 import ComposePage from "./pages/ComposePage"
+import DeletedEmails from "./pages/DeletedEmails"
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       <Routes>
         <Route path="/" element={<EmailList /> } /> 
         <Route path="/viewemail/:id" element={<ViewEmail />} />
-        <Route path="/compose"element={<ComposePage/>}/>
+        <Route path="/compose" element={<ComposePage />} />
+        <Route path="/deleted" element={<DeletedEmails />} />
       </Routes>
     </BrowserRouter>
   )
