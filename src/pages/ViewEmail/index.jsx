@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, redirect, useParams } from "react-router-dom"
 
 function ViewEmail() { 
     const {id} = useParams()
@@ -33,15 +33,16 @@ function ViewEmail() {
                 },
                 
                 body:JSON.stringify({
-                    deleted:isDeleted
+                deleted:isDeleted
                 })
             })
+            
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-            })
-        
-       console.log(isDeleted)
+            console.log(data)
+                })
+            console.log(isDeleted)
+
     }
 
     useEffect(getEmailData, [])
@@ -58,10 +59,11 @@ function ViewEmail() {
                 <p>{body}</p>
             </div>
             <footer>
-                <button onClick={deleteEmail}  className="border rounded
-                    py-2 px-3 text-white bg-red-600 cursor-pointer">
+                <Link to="/"><button onClick={deleteEmail}
+                    className="border rounded py-2 px-3 text-white bg-red-600 cursor-pointer">
                     Delete
                 </button>
+                </Link>
             </footer>
         </div>
  )
