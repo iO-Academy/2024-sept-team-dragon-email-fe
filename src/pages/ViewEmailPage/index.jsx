@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import {useNavigate, useParams } from "react-router-dom"
 
-function ViewEmail() { 
+function ViewEmailPage() { 
     const {id} = useParams()
     const navigate = useNavigate()
     
@@ -64,4 +64,4 @@ function ViewEmail() {
         </div>
  )
 }
-export default ViewEmail
+export default ViewEmailPage
