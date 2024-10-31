@@ -30,9 +30,7 @@ function EmailForm(){
     })
       .then(res => res.json())
       .then(data => {
-        // setConfirm(data.message)
         confirmMessage(data.data.sent)
-        console.log(data.data.sent)
     })
   }
 
