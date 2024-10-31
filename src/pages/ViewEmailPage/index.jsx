@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import {useNavigate, useParams } from "react-router-dom"
 
 function ViewEmailPage() { 
     const {id} = useParams()
+    const navigate = useNavigate()
     
     const [name, setName] = useState ("")
     const [emailAddress, setEmailAddress] = useState("")
@@ -33,18 +34,18 @@ function ViewEmailPage() {
                 },
                 
                 body:JSON.stringify({
-                    deleted:isDeleted
+                deleted:isDeleted
                 })
-            })
+            })         
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-            })
-        
-       console.log(isDeleted)
+                navigate("/")
+                })
     }
 
     useEffect(getEmailData, [])
+
+    console.log(isDeleted)
     
     return (
         <div>
@@ -58,10 +59,7 @@ function ViewEmailPage() {
                 <p>{body}</p>
             </div>
             <footer>
-                <button onClick={deleteEmail}  className="border rounded
-                    py-2 px-3 text-white bg-red-600 cursor-pointer">
-                    Delete
-                </button>
+                {isDeleted ==0 && <button onClick={deleteEmail} className="border rounded py-2 px-3 text-white bg-red-600 cursor-pointer">Delete</button>}
             </footer>
         </div>
  )
