@@ -10,8 +10,29 @@ function EmailForm(){
         console.log(email)
         console.log(subject)
         console.log(message)
+        getData()
     }
 
+  function getData (){
+    fetch('https://email-client-api.dev.io-academy.uk/emails', {
+  method: 'POST',
+  headers: {
+    "content-type": "application/json"
+  },
+  body:JSON.stringify({
+    name: "username",
+     email:email,
+      subject:subject,
+      body:message
+     
+    })
+})
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+  })
+  }
+//   useEffect (getData,[])
     return(
         <form onSubmit={handleSubmit}
         className="flex flex-col py-4 px-8 gap-4">
