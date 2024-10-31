@@ -9,8 +9,10 @@ function Dropdown({unreadCount}) {
                 <DropdownButton name="New Email"
                                 link="/compose"/>
                 <DropdownButton name="Inbox"
-                                count={unreadCount}
-                                link="/"/>                
+                                count={unreadCount} 
+                                link="/"/> 
+                <DropdownButton name="Sent"  
+                                link="/sent"/>                         
             </div>
         </div>
     )
