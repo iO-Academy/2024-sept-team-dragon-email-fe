@@ -28,7 +28,9 @@ function Dropdown() {
                                 link="/compose"/>
                 <DropdownButton name="Inbox"
                                 count={unreadEmailCount}
-                                link="/"/>                
+                                link="/"/> 
+                <DropdownButton name="Sent"  
+                                link="/sent"/>                         
             </div>
         </div>
     )
