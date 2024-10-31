@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 
-function ViewEmail() { 
+function ViewEmailPage() { 
     const {id} = useParams()
     
     const [name, setName] = useState ("")
@@ -38,4 +38,4 @@ function ViewEmail() {
         </div>
  )
 }
-export default ViewEmail
+export default ViewEmailPage

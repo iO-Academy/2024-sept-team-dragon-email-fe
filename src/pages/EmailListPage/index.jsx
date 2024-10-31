@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import EmailPreview from "../../components/EmailPreview"
 
-function EmailList() {
+function EmailListPage() {
 
     const [emails, setEmails] = useState([])
 
@@ -39,4 +39,4 @@ function EmailList() {
         )
     }
 
-export default EmailList
+export default EmailListPage
