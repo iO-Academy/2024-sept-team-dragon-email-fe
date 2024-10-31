@@ -1,6 +1,7 @@
 import MenuButton from "../MenuButton"
 
 function Nav() {
+
     return (
         <header className="flex md:w-full justify-between items-center
          p-4 gap-4

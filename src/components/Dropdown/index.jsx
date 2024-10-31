@@ -1,24 +1,6 @@
-import { useEffect, useState } from "react"
 import DropdownButton from "../DropdownButton"
 
-function Dropdown() {  
-    const [unreadEmailCount, setUnreadEmailCount] = useState(0)
-
-    function getEmailCount() {
-        fetch("https://email-client-api.dev.io-academy.uk/emails")
-            .then(res => res.json())
-            .then(emailData => {
-
-                let unreadCount = 0
-
-                emailData.data.forEach(email => {
-                    if (email.read == 0){unreadCount ++}
-                })
-                setUnreadEmailCount(unreadCount) 
-            }
-    )}
-
-    useEffect(getEmailCount, [])
+function Dropdown({unreadCount}) {  
 
     return (
         <div className="dropDownContent">
@@ -27,7 +9,7 @@ function Dropdown() {
                 <DropdownButton name="New Email"
                                 link="/compose"/>
                 <DropdownButton name="Inbox"
-                                count={unreadEmailCount}
+                                count={unreadCount} 
                                 link="/"/> 
                 <DropdownButton name="Sent"  
                                 link="/sent"/>                         

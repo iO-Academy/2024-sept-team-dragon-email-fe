@@ -1,7 +1,26 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Dropdown from "../Dropdown"
 
 function MenuButton (){
+
+  const [unreadEmailCount, setUnreadEmailCount] = useState(0)
+
+  function getEmailCount() {
+    fetch("https://email-client-api.dev.io-academy.uk/emails")
+      .then(res => res.json())
+      .then(emailData => {
+
+        let unreadCount = 0
+
+        emailData.data.forEach(email => {
+            if (email.read == 0){unreadCount ++}
+        })
+        setUnreadEmailCount(unreadCount) 
+      }
+  )}
+
+  useEffect(getEmailCount, [])
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   function toggleMenu() {
@@ -17,7 +36,7 @@ function MenuButton (){
       </button>
       {isMenuOpen && (
 
-          <Dropdown />
+          <Dropdown unreadCount={unreadEmailCount}/>
       )}
     </nav>
   )
