@@ -9,6 +9,7 @@ function ViewEmailPage() {
     const [subject, setSubject] = useState("")
     const [body, setBody] = useState("")
     const [date, setDate] = useState("")
+    const [isDeleted, setIsDeleted] = useState()
 
     function getEmailData() {
         fetch(`https://email-client-api.dev.io-academy.uk/emails/${id}`)
@@ -18,8 +19,29 @@ function ViewEmailPage() {
                 setEmailAddress(emailData.data.email.email)
                 setSubject(emailData.data.email.subject)
                 setBody(emailData.data.email.body)
-                setDate(emailData.data.email.date_created)                
+                setDate(emailData.data.email.date_created)     
+                setIsDeleted(emailData.data.email.deleted)           
             })
+    }
+
+    function deleteEmail() {
+       setIsDeleted(1)
+            fetch(`https://email-client-api.dev.io-academy.uk/emails/${id}`, {
+                method: 'DELETE',  
+                headers: {
+                    "content-type": "application/json"
+                },
+                
+                body:JSON.stringify({
+                    deleted:isDeleted
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+        
+       console.log(isDeleted)
     }
 
     useEffect(getEmailData, [])
@@ -35,6 +57,12 @@ function ViewEmailPage() {
             <div>
                 <p>{body}</p>
             </div>
+            <footer>
+                <button onClick={deleteEmail}  className="border rounded
+                    py-2 px-3 text-white bg-red-600 cursor-pointer">
+                    Delete
+                </button>
+            </footer>
         </div>
  )
 }
