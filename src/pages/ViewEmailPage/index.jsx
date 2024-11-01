@@ -12,6 +12,7 @@ function ViewEmailPage() {
     const [body, setBody] = useState("")
     const [date, setDate] = useState("")
     const [isDeleted, setIsDeleted] = useState()
+    const [isRead, setIsRead] = useState()
 
     function getEmailData() {
         fetch(`https://email-client-api.dev.io-academy.uk/emails/${id}`)
@@ -22,8 +23,19 @@ function ViewEmailPage() {
                 setSubject(emailData.data.email.subject)
                 setBody(emailData.data.email.body)
                 setDate(emailData.data.email.date_created)     
-                setIsDeleted(emailData.data.email.deleted)           
+                setIsDeleted(emailData.data.email.deleted)
+                setIsRead(emailData.data.email.read)           
             })
+    }
+
+    function markEmailRead() {
+        fetch(`https://email-client-api.dev.io-academy.uk/emails/${id}`, {
+            method: 'Put',
+            headers: {
+                    "content-type": "application/json"
+            }
+        })
+            .then(res => res.json())
     }
 
     function deleteEmail() {
@@ -41,6 +53,7 @@ function ViewEmailPage() {
     }
 
     useEffect(getEmailData, [])
+    useEffect(markEmailRead, [])
     
     return (
         <div className="px-4 py-2">
