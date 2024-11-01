@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import EmailPreview from "../../components/EmailPreview"
+import reverseDate from "../../functions/reverseDate"
 
-function DeletedEmails() {
+function DeletedEmailsPage() {
     
     const[deletedEmails, setDeletedEmails] = useState([])
     
@@ -9,23 +10,14 @@ function DeletedEmails() {
         fetch("https://email-client-api.dev.io-academy.uk/emails/deleted")
             .then(res => res.json())
             .then(deletedEmailData => {
-                // console.log(deletedEmailData.data)
                 setDeletedEmails(deletedEmailData.data)
             })
     }
 
     useEffect (getDeletedEmailData, [])
     
-    function reverseDate(inputDate) {
-        let splitDate = inputDate.split(" ")[0]
-        let array = splitDate.split("-")
-        let newDate = `${array[2]}-${array[1]}-${array[0]}`
-        return newDate
-    }
-    
     return (
-        
-            <div className="border-b-2" >
+        <div className="border-b-2" >
             {deletedEmails.map(deletedEmail =>
                     <EmailPreview
                     emailID={deletedEmail.id}
@@ -37,8 +29,8 @@ function DeletedEmails() {
                     emailDate={reverseDate(deletedEmail.date_created)}
                     />
                 )}
-            </div>
-        
+            </div>      
  )
 }
-export default DeletedEmails
+
+export default DeletedEmailsPage

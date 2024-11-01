@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import {useNavigate, useParams } from "react-router-dom"
+import reverseDate from "../../functions/reverseDate"
 
 function ViewEmailPage() { 
     const {id} = useParams()
@@ -31,37 +32,39 @@ function ViewEmailPage() {
                 method: 'DELETE',  
                 headers: {
                     "content-type": "application/json"
-                },
-                
-                body:JSON.stringify({
-                deleted:isDeleted
-                })
+                }
             })         
             .then(res => res.json())
-            .then(data => {
+            .then(() => {
                 navigate("/")
-                })
+            })
     }
 
     useEffect(getEmailData, [])
-
-    console.log(isDeleted)
     
     return (
         <div>
-            <p>{date}</p>
-            <div className="pl-4 pt-4 flex-col justify-between px-4 py-2 ">
-                <h2 className="mb-4">{name}</h2>
-                <p className="mb-4">{emailAddress}</p>
-                <p className="mb-4">{subject}</p>
-            </div>
-            <div>
-                <p>{body}</p>
-            </div>
+
+            <div className="pl-4 pt-4 flex justify-between px-4 py-2 ">
+
+                <div>
+                    <h2 className="p-1">{name}</h2>
+                    <p>{emailAddress}</p>
+                    <p>{subject}</p>
+                </div>
+
+                <div>
+                    <p className="px-4 py-2">{reverseDate(date)}</p></div>
+                </div>
+
+                <div>
+                    <p>{body}</p>
+                </div>
             <footer>
                 {isDeleted ==0 && <button onClick={deleteEmail} className="border rounded py-2 px-3 text-white bg-red-600 cursor-pointer">Delete</button>}
             </footer>
         </div>
- )
+    )
 }
+
 export default ViewEmailPage

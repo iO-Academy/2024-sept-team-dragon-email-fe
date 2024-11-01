@@ -7,8 +7,6 @@ function SentItem({name, email, subject, body, dateCreated}) {
                     <p className="text-lg font-bold">{email}</p>
                     <p className="text-sm">{subject}</p>
                     <p className="text-sm">{body}</p>
-                   
-                  
                 </div>
 
                 <div>

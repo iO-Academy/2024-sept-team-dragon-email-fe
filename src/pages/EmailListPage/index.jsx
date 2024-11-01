@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import EmailPreview from "../../components/EmailPreview"
+import reverseDate from "../../functions/reverseDate"
 
 function EmailListPage() {
 
@@ -14,13 +15,6 @@ function EmailListPage() {
     }
         
     useEffect(getEmailData, [])
-
-    function reverseDate(inputDate) {
-        let splitDate = inputDate.split(" ")[0]
-        let array = splitDate.split("-")
-        let newDate = `${array[2]}-${array[1]}-${array[0]}`
-        return newDate
-    }
 
     return (
             <div className="border-b-2" >

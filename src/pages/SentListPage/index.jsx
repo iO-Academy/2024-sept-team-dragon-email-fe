@@ -1,25 +1,18 @@
 import { useEffect, useState } from "react"
-import SentItem from "../SentItem"
+import SentItem from "../../components/SentItem"
+import reverseDate from "../../functions/reverseDate"
 
-function SentList() {
+function SentListPage() {
   const [emails, setEmails] = useState([])
   function getEmailData() {
     fetch("https://email-client-api.dev.io-academy.uk/emails/sent")
-      .then((res) => res.json())
-      .then((emailData) => {
+      .then(res => res.json())
+      .then(emailData => {
         setEmails(emailData.data)
-        
       })
   }
 
   useEffect(getEmailData, [])
-
-  function reverseDate(inputDate) {
-    let splitDate = inputDate.split(" ")[0]
-    let array = splitDate.split("-")
-    let newDate = `${array[2]}-${array[1]}-${array[0]}`
-    return newDate
-  }
 
   return (
     <div className = "border-b-2">
@@ -37,4 +30,4 @@ function SentList() {
   )
 }
 
-export default SentList
+export default SentListPage

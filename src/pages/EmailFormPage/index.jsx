@@ -1,21 +1,22 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import InputBox from "../InputBox"
+import InputBox from "../../components/InputBox"
 
-function EmailForm(){
+function EmailFormPage(){
 
   const [email, setEmail] = useState('')
   const [subject, setSubject] = useState('')
   const [message, setMessage] = useState('')
   const [confirm, setConfirm] = useState('')
-  const emailChange = (e) => {setEmail(e.target.value)}
+  
+  const emailChange = (e) => { setEmail(e.target.value) }
   const subjectChange = (e) => {setSubject(e.target.value)}
   const handleSubmit = (e) => {
       e.preventDefault()
-      getData()
+      sendEmail()
   }
     
-  function getData (){
+  function sendEmail(){
     fetch('https://email-client-api.dev.io-academy.uk/emails', {
       method: 'POST',
       headers: {
@@ -23,9 +24,9 @@ function EmailForm(){
       },
       body:JSON.stringify({
         name: "username",
-        email:email,
-        subject:subject,
-        body:message
+        email: email,
+        subject: subject,
+        body: message
       })
     })
       .then(res => res.json())
@@ -43,7 +44,6 @@ function EmailForm(){
       setConfirm(<p>Email sent succesfully!</p>)
     }
   }
-
 
   return(
     <form onSubmit={handleSubmit}
@@ -92,4 +92,4 @@ function EmailForm(){
   )
 }
 
-export default EmailForm
+export default EmailFormPage
