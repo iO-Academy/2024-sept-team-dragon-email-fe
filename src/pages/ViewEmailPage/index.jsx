@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import {useNavigate, useParams } from "react-router-dom"
 import reverseDate from "../../functions/reverseDate"
+import DropdownButton from "../../components/DropdownButton"
 
 function ViewEmailPage() { 
     const {id} = useParams()
@@ -73,8 +74,11 @@ function ViewEmailPage() {
                 <div>
                     <p>{body}</p>
                 </div>
-            <footer>
+            <footer className="flex gap-1 justify-end pt-2">
                 {isDeleted ==0 && <button onClick={deleteEmail} className="border rounded py-2 px-3 text-white bg-red-600 cursor-pointer">Delete</button>}
+                <button className="border rounded py-2 px-3 text-white bg-gray-500">
+                    Close
+                </button>
             </footer>
         </div>
     )
